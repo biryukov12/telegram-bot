@@ -1,2 +1,4 @@
 # telegram-bot
-My first try to write telegram bot on a Node.js
+My first telegram bot on a JS (Node.js runtime)
+
+![Screenshot](https://github.com/biryukov12/telegram-bot/raw/master/Screenshot.png)
