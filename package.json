@@ -1,0 +1,22 @@
+{
+  "name": "webstorm",
+  "version": "1.0.0",
+  "description": "\"# diary-bot\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "engines": {
+    "node": "9.6.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blockchain.info": "^2.12.1",
+    "node-telegram-bot-api": "^0.30.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
