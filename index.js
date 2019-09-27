@@ -14,6 +14,7 @@ const bot = new TelegramBot(TOKEN, {
 })
 
 // /Меню
+// /Начало диалога с ботом
 bot.onText(/\/start/, (msg) => {
     const chatID = msg.chat.id
     bot.sendSticker(msg.chat.id, msg.file_id ='CAADAgADoD0AAlOx9wNrJbrMA400lQI')
@@ -25,16 +26,10 @@ bot.onText(/\/start/, (msg) => {
                         text: 'Курс валют',
                         callback_data: 'curse'
                     },
-
-
                     {
-                        text: 'Определиться с выбором',
-                        callback_data: 'new'
-                    }],
-                [{
-                    text: 'Прогноз погоды',
-                    callback_data: 'weather'
-                }]
+                        text: 'Прогноз погоды',
+                        callback_data: 'weather'
+                    }]
 
 
             ]
@@ -42,6 +37,7 @@ bot.onText(/\/start/, (msg) => {
     })
     bot.sendMessage(msg.chat.id, '/help – для вызова справки.')
 })
+// /Курс валют
 bot.onText(/\/value/, (msg) => {
     const chatID = msg.chat.id
     bot.sendMessage(chatID, 'Выберите интересующую вас валюту:', {
@@ -72,6 +68,7 @@ bot.onText(/\/value/, (msg) => {
         }
     })
 })
+// /Прогноз погоды
 bot.onText(/\/weather/, (msg) => {
     const chatID = msg.chat.id
     bot.sendMessage(chatID, 'Выберите город:', {
@@ -102,9 +99,10 @@ bot.onText(/\/weather/, (msg) => {
         }
     })
 })
+// /Помощь
 bot.onText(/\/help/, (msg) => {
     const chatID = msg.chat.id
-    const htm = '• Для вызова главного меню отправьте <b>"m"</b>' + '\n• Прогноз погоды – <b>"w"</b>' + '\n• Курс валют – <b>"v"</b>'+ '\n• Магический шар – <b>"n"</b>' + '\n• Настоятельно не рекоммендую оскорблять бота.' + '\n' +
+    const htm = '• Для вызова главного меню отправьте <b>"m"</b>' + '\n• Прогноз погоды – <b>"w"</b>' + '\n• Курс валют – <b>"v"</b>' + '\n' +
         '\nЛучше подпишитесь на <a href="https://instagram.com/biryukov12">инстаграм</a> создателя '
     bot.sendMessage(chatID, htm,{
         parse_mode: 'HTML'
@@ -125,16 +123,10 @@ bot.on('message', msg =>{
                             text: 'Курс валют',
                             callback_data: 'curse'
                         },
-
-
                         {
-                            text: 'Определиться с выбором',
-                            callback_data: 'new'
-                        }],
-                    [{
-                        text: 'Прогноз погоды',
-                        callback_data: 'weather'
-                    }]
+                            text: 'Прогноз погоды',
+                            callback_data: 'weather'
+                        }]
 
 
                 ]
@@ -388,7 +380,7 @@ bot.on('callback_query', query => {
     const url2=`https://wex.nz/api/3/ticker/eth_usd`
     switch (`${query.data}`) {
         case ('usd'):
-            request(`http://api.fixer.io/latest?symbols=${symbol}&base=${base}`, (error, response, body) => {
+            request(`http://data.fixer.io/api/latest?access_key=8b320d256840f490fb582205f1c3e279&format=1&symbols=${symbol}&base=${base}`, (error, response, body) => {
                 if (error) throw new Error(error)
                 if (response.statusCode === 200) {
                     const currencyData = JSON.parse(body)
@@ -401,7 +393,7 @@ bot.on('callback_query', query => {
         break
 
         case ('eur'):
-                request(`http://api.fixer.io/latest?symbols=${symbol}&base=${base2}`, (error, response, body) => {
+                request(`http://data.fixer.io/api/latest?access_key=8b320d256840f490fb582205f1c3e279&format=1&symbols=${symbol}&base=${base2}`, (error, response, body) => {
                     if (error) throw new Error(error)
                     if (response.statusCode === 200) {
                         const currencyData = JSON.parse(body)

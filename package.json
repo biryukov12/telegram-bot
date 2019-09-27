@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "blockchain.info": "^2.12.1",
+    "cryptoapis.io": "^3.2.0",
     "node-telegram-bot-api": "^0.30.0",
     "request": "^2.88.0"
   },
