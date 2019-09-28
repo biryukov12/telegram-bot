@@ -2,9 +2,512 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6025812a-3be2-48d3-a542-e40d1abb534b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/test btc rate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/MyWallet/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/MyWallet/endpoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/MyWallet/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/Receive/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/Receive/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/Socket/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/Socket/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/blockexplorer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/blockexplorer/blocks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/blockexplorer/endpoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/blockexplorer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/blockexplorer/spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/exchange/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/exchange/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/exchange/spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/browser/bluebird.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/browser/bluebird.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/any.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/assert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/async.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/bind.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/bluebird.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/call_get.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/cancel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/captured_trace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/catch_filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/debuggability.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/direct_resolve.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/each.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/finally.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/generators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/join.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/method.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/nodeify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/progress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/promise.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/promise_array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/promise_resolver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/promisify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/props.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/queue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/race.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/reduce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/schedule.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/settle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/some.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/synchronous_inspection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/thenables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/timers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/using.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/js/main/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/bluebird/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/compact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/difference.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/drop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/dropRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/dropRightWhile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/dropWhile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/fill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/findIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/findLastIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/first.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/flatten.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/flattenDeep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/head.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/indexOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/initial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/intersection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/last.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/lastIndexOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/object.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/pull.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/pullAt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/remove.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/rest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/slice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/sortedIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/sortedLastIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/tail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/take.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/takeRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/takeRightWhile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/takeWhile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/union.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/uniq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/unique.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/unzip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/unzipWith.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/without.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/xor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/zip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/zipObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/array/zipWith.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/chain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/commit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/concat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/lodash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/plant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/reverse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/run.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/tap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/thru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/toJSON.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/toString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/value.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/valueOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperChain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperCommit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperConcat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperPlant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperReverse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperToString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/chain/wrapperValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/any.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/at.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/collect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/contains.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/countBy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/detect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/each.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/eachRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/every.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/find.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/findLast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/findWhere.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/foldl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/foldr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/forEach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/forEachRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/groupBy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/include.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/includes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/indexBy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/inject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/invoke.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/max.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/partition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/pluck.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/reduce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/reduceRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/reject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/sample.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/shuffle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/size.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/some.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/sortBy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/sortByAll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/sortByOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/sum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/collection/where.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/date/now.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/after.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/ary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/backflow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/before.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/bind.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/bindAll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/bindKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/compose.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/curry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/curryRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/debounce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/defer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/delay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/flowRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/memoize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/modArgs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/negate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/once.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/partial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/partialRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/rearg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/restParam.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/spread.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/throttle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/function/wrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/LazyWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/LodashWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/MapCache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/SetCache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayConcat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayCopy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayEach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayEachRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayEvery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayExtremum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayPush.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayReduce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arrayReduceRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arraySome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/arraySum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/assignDefaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/assignOwnDefaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/assignWith.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseAssign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseAt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseCallback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseClone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseCompareAscending.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseCopy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseCreate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseDelay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseDifference.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseEach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseEachRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseEvery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseExtremum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFind.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFindIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFlatten.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseForIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseForOwn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseForOwnRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseForRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseFunctions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseGet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseIndexOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseIsEqual.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseIsEqualDeep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseIsFunction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseIsMatch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseLodash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseMatches.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseMatchesProperty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseMerge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseMergeDeep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseProperty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/basePropertyDeep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/basePullAt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseRandom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseReduce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseSetData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseSome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseSortBy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseSortByOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseSum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseToString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseUniq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseValues.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseWhile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/baseWrapperValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/binaryIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/binaryIndexBy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/bindCallback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/bufferClone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/cacheIndexOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/cachePush.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/charsLeftIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/charsRightIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/compareAscending.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/compareMultiple.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/composeArgs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/composeArgsRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createAggregator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createAssigner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createBaseEach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createBaseFor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createBindWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createCache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createCompounder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createCtorWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createCurry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createDefaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createExtremum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createFind.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createFindIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createFindKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createFlow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createForEach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createForIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createForOwn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createHybridWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createObjectMapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createPadDir.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createPadding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createPartial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createPartialWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createReduce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createRound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createSortedIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/createWrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/deburrLetter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/equalArrays.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/equalByTag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/equalObjects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/escapeHtmlChar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/escapeRegExpChar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/escapeStringChar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/getData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/getFuncName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/getLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/getMatchData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/getNative.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/getView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/indexOfNaN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/initCloneArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/initCloneByTag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/initCloneObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/invokePath.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isArrayLike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isIterateeCall.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isLaziable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isObjectLike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isSpace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/isStrictComparable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/lazyClone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/lazyReverse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/lazyValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/mapDelete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/mapGet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/mapHas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/mapSet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/mergeData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/mergeDefaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/metaMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/pickByArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/pickByCallback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/reEscape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/reEvaluate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/reInterpolate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/realNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/reorder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/replaceHolders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/setData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/shimKeys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/sortedUniq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/toIterable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/toObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/toPath.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/trimmedLeftIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/trimmedRightIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/unescapeHtmlChar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/internal/wrapperClone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/clone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/cloneDeep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/eq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/gt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/gte.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isArguments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isBoolean.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isDate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isElement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isEmpty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isEqual.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isFinite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isFunction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isMatch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isNaN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isNative.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isNull.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isNumber.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isPlainObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isRegExp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isTypedArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/isUndefined.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/lte.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/toArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/lang/toPlainObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/ceil.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/floor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/max.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/round.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/math/sum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/number.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/number/inRange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/number/random.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/assign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/create.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/defaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/defaultsDeep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/extend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/findKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/findLastKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/forIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/forInRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/forOwn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/forOwnRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/functions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/get.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/has.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/invert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/keys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/keysIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/mapKeys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/mapValues.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/merge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/methods.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/omit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/pairs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/pick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/result.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/set.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/transform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/values.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/object/valuesIn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/camelCase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/capitalize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/deburr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/endsWith.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/escape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/escapeRegExp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/kebabCase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/pad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/padLeft.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/padRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/parseInt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/repeat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/snakeCase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/startCase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/startsWith.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/template.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/templateSettings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/trim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/trimLeft.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/trimRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/trunc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/unescape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/string/words.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/attempt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/callback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/constant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/identity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/iteratee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/matches.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/matchesProperty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/method.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/methodOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/mixin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/noop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/property.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/propertyOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/range.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/times.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/lodash/utility/uniqueId.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/lib/bluebird-captured-trace-fresh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/lib/bluebird-fresh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/lib/errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/lib/rp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/node_modules/request-promise/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/pushtx/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/pushtx/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/statistics/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/statistics/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/blockchain.info/statistics/spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/cryptoapis.io/src/rest-apis/crypto-market-data/exchange-rates.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cryptoapis.io/src/rest-apis/crypto-market-data/exchange-rates.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +542,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.11.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -47,6 +551,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -65,7 +570,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
+  <component name="RunManager" selected="Node.js.test btc rate.js">
     <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
       <node-js-remote-debug />
       <method />
@@ -74,6 +579,12 @@
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" editBeforeRun="true" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch.js" type="NodeJSConfigurationType" editBeforeRun="true" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch.js">
+      <method v="2" />
+    </configuration>
+    <configuration name="test btc rate.js" type="NodeJSConfigurationType" editBeforeRun="true" temporary="true" nameIsGenerated="true" path-to-js-file="test btc rate.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp">
@@ -98,6 +609,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.test btc rate.js" />
+        <item itemvalue="Node.js.scratch.js" />
         <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
@@ -169,18 +682,9 @@
       <workItem from="1569518598236" duration="2988000" />
       <workItem from="1569530500361" duration="717000" />
       <workItem from="1569532089289" duration="183000" />
-      <workItem from="1569532366226" duration="4932000" />
+      <workItem from="1569532366226" duration="34156000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
