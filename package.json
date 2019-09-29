@@ -7,7 +7,7 @@
     "start": "nodemon index.js"
   },
   "engines": {
-    "node": "9.6.1"
+    "node": "12.11.0"
   },
   "author": "",
   "license": "ISC",
