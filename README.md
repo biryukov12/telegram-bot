@@ -6,7 +6,9 @@ From the available functionality:
 - weather forecast (quick access to the weather forecast in Safonovo, Moscow and St. Petersburg, and in any other city by name).
 
 API for the exchange rate: data.fixer.io
+
 API for the Bitcoin course: cryptoapis.io
+
 Weather forecast API: api.openweathermap.org
 
 
