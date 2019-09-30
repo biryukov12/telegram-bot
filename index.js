@@ -167,9 +167,18 @@ bot.on('callback_query', query => {
             request(urlMsk, function(error, response, body) {
                 if (!error && response.statusCode === 200) {
                     const bodyJson = JSON.parse(body)
-                    console.log(bodyJson)
-                    const Weather = `Москва:<b> ${bodyJson.main.temp}°C</b>`
-                    bot.sendMessage(chatID, Weather, {
+
+                    let weather_type = `${bodyJson.weather[0].main}`
+                    if (weather_type === 'Clouds') {
+                        weather_type = 'облачно'
+                    }
+
+                    //console.log(bodyJson)
+                    console.log(weather_type)
+                    const weather_temp = `Москва:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
+                    const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
+                    const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
+                    bot.sendMessage(chatID, weather_temp + '\n' + weather_wind + '\n' + weather_humidity, {
                         parse_mode: 'HTML'
                     })
                 }
