@@ -168,9 +168,8 @@ bot.on('callback_query', query => {
                 if (!error && response.statusCode === 200) {
                     const bodyJson = JSON.parse(body)
                     console.log(bodyJson)
-                    const WeatherC = `Москва:<b> ${bodyJson.main.temp}°C</b>`
-                    const WeatherType = `<b> ${bodyJson.weather.main}°C</b>`
-                    bot.sendMessage(chatID, WeatherC, WeatherType, {
+                    const Weather = `Москва:<b> ${bodyJson.main.temp}°C</b>`
+                    bot.sendMessage(chatID, WeatherC, {
                         parse_mode: 'HTML'
                     })
                 }
