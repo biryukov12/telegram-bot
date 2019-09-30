@@ -169,7 +169,7 @@ bot.on('callback_query', query => {
                     const bodyJson = JSON.parse(body)
                     console.log(bodyJson)
                     const Weather = `Москва:<b> ${bodyJson.main.temp}°C</b>`
-                    bot.sendMessage(chatID, WeatherC, {
+                    bot.sendMessage(chatID, Weather, {
                         parse_mode: 'HTML'
                     })
                 }
