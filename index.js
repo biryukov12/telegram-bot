@@ -111,39 +111,65 @@ bot.onText(/\/help/, (msg) => {
 
 
 // Inline keyboard
+
 // Inline weather
 // Choose city
 bot.on('callback_query', query => {
     const chatID = query.message.chat.id
-    switch (`${query.data}`) {
-        case 'weather':
-            bot.sendMessage(chatID, 'Выберите город:', {
-                reply_markup: {
-                    inline_keyboard: [
-                        [
-                            {
-                                text: 'Сафоново',
-                                callback_data: 'saf'
-                            },
-                            {
-                                text: 'Москва',
-                                callback_data: 'msk'
-                            },
-                            {
-                                text: 'Санкт-Петербург',
-                                callback_data: 'spb'
-                            },
-                        ],
-                        [{
-                            text: 'Другой город',
-                            callback_data: 'other'
-                        }]
-                    ]
-                }
-            })
-            break
+    if (`${query.data}` === 'weather') {
+        bot.sendMessage(chatID, 'Выберите город:', {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {
+                            text: 'Сафоново',
+                            callback_data: 'saf'
+                        },
+                        {
+                            text: 'Москва',
+                            callback_data: 'msk'
+                        },
+                        {
+                            text: 'Санкт-Петербург',
+                            callback_data: 'spb'
+                        },
+                    ],
+                    [{
+                        text: 'Другой город',
+                        callback_data: 'other'
+                    }]
+                ]
+            }
+        })
     }
 })
+// Перевод описания прогноза погоды
+function weatherType(type) {
+    switch (type) {
+        case 'Rain':
+            type = 'Дождь'
+            break
+        case 'Clouds':
+            type = 'Облачно'
+            break
+        case 'Clear':
+            type = 'Ясно'
+            break
+        case 'Sun' || 'Sunny':
+            type = 'Солнечно'
+            break
+        case 'Fog':
+            type = 'Туман'
+            break
+        case 'Wind':
+            type = 'Ветер'
+            break
+        case 'Snow':
+            type = 'Снег'
+            break
+    }
+    return type
+}
 // Safonovo, Moscow, SPB
 bot.on('callback_query', query => {
     const chatID = query.message.chat.id
@@ -153,28 +179,23 @@ bot.on('callback_query', query => {
             request(urlSaf, function(error, response, body) {
                 if (!error && response.statusCode === 200) {
                     const bodyJson = JSON.parse(body)
-                    console.log(bodyJson)
-                    const Weather = `Сафоново:<b> ${bodyJson.main.temp}°C</b>`
-                    bot.sendMessage(chatID, Weather, {
+                    let weather_type = weatherType(`${bodyJson.weather[0].main}`)
+                    const weather_temp = `Сафоново:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
+                    const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
+                    const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
+                    bot.sendMessage(chatID, weather_temp + '\n' + weather_wind + '\n' + weather_humidity, {
                         parse_mode: 'HTML'
                     })
                 }
             })
-    break
+            break
         case 'msk':
             const cityMsk = 'Moscow'
             const urlMsk=`https://api.openweathermap.org/data/2.5/weather?q=${cityMsk}&units=metric&appid=307bf290d83b2692ad950c49cd70a70e`
             request(urlMsk, function(error, response, body) {
                 if (!error && response.statusCode === 200) {
                     const bodyJson = JSON.parse(body)
-
-                    let weather_type = `${bodyJson.weather[0].main}`
-                    if (weather_type === 'Clouds') {
-                        weather_type = 'облачно'
-                    }
-
-                    //console.log(bodyJson)
-                    console.log(weather_type)
+                    let weather_type = weatherType(`${bodyJson.weather[0].main}`)
                     const weather_temp = `Москва:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
                     const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
                     const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
@@ -183,16 +204,18 @@ bot.on('callback_query', query => {
                     })
                 }
             })
-    break
+            break
         case 'spb':
             const citySpb = 'Sankt-Peterburg'
             const urlSpb=`https://api.openweathermap.org/data/2.5/weather?q=${citySpb}&units=metric&appid=307bf290d83b2692ad950c49cd70a70e`
             request(urlSpb, function(error, response, body) {
                 if (!error && response.statusCode === 200) {
                     const bodyJson = JSON.parse(body)
-                    console.log(bodyJson)
-                    const Weather = `Санкт-Петербург:<b> ${bodyJson.main.temp}°C</b>`
-                    bot.sendMessage(chatID, Weather, {
+                    let weather_type = weatherType(`${bodyJson.weather[0].main}`)
+                    const weather_temp = `Санкт-Петербург:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
+                    const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
+                    const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
+                    bot.sendMessage(chatID, weather_temp + '\n' + weather_wind + '\n' + weather_humidity, {
                         parse_mode: 'HTML'
                     })
                 }
@@ -203,45 +226,45 @@ bot.on('callback_query', query => {
 // Enter city
 bot.on('callback_query', query => {
     const chatID = query.message.chat.id
-    var flag1 = false
-    switch (`${query.data}`) {
-        case ('other'):
+    let flag1 = false
+    if (`${query.data}` === ('other')) {
         bot.sendMessage(chatID, 'Введите название города.\nЕсли прогноз погоды не отобразится – введите название города на латинице.')
-            flag1 = true
+        flag1 = true
         bot.on('message', msg =>{
             // Translation from сyrillic
-            transliterate = (
-                function() {
-                    var
+            let transliterate = (
+                function () {
+                    let
                         rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
                         eng = "shh sh ch ts yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x ".split(/ +/g)
-                    ;
-                    return function(text, engToRus) {
-                        var x;
-                        for(x = 0; x < rus.length; x++) {
-                            text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
-                            text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
+
+                    return function (text, engToRus) {
+                        let x
+                        for (x = 0; x < rus.length; x++) {
+                            text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x])
+                            text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase())
                         }
-                        return text;
+                        return text
                     }
                 }
-            )();
+            )()
             // Weather for entered city
             const city = transliterate(msg.text)
             const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=307bf290d83b2692ad950c49cd70a70e`
             request(url, function(error, response, body) {
                 if (!error && response.statusCode === 200) {
                     const bodyJson = JSON.parse(body)
-                    console.log(bodyJson)
-                    const Weather = `${msg.text}:<b> ${bodyJson.main.temp}°C</b> \n\nДля повторного использования отправьте – <b>"w" или название другого города.</b>`
-                    bot.sendMessage(chatID, Weather, {
+                    let weather_type = weatherType(`${bodyJson.weather[0].main}`)
+                    const weather_temp = `${msg.text}:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
+                    const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
+                    const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
+                    bot.sendMessage(chatID, weather_temp + '\n' + weather_wind + '\n' + weather_humidity, {
                         parse_mode: 'HTML'
                     })
                 }
             })
         })
-            flag1 = false
-        break
+        flag1 = false
     }
     bot.answerCallbackQuery(query.id)
 })
@@ -249,31 +272,29 @@ bot.on('callback_query', query => {
 // Inline exchange rates
 bot.on('callback_query', query => {
     const chatID = query.message.chat.id
-    switch(    `${query.data}` ) {
-        case 'curse':
-            bot.sendMessage(chatID, 'Выберите интересующую вас валюту:', {
-                reply_markup:{
-                    inline_keyboard: [
-                        [
-                            {
-                                text:'$',
-                                callback_data:'usd'
-                            },
+    if (`${query.data}` === 'curse') {
+        bot.sendMessage(chatID, 'Выберите интересующую вас валюту:', {
+            reply_markup:{
+                inline_keyboard: [
+                    [
+                        {
+                            text:'$',
+                            callback_data:'usd'
+                        },
 
-                            {
-                                text:'€',
-                                callback_data:'eur'
-                            },
+                        {
+                            text:'€',
+                            callback_data:'eur'
+                        },
 
-                            {
-                                text:'₿',
-                                callback_data:'btc'
-                            }
-                        ]
+                        {
+                            text:'₿',
+                            callback_data:'btc'
+                        }
                     ]
-                }
-            })
-            break
+                ]
+            }
+        })
     }
     bot.answerCallbackQuery(query.id)
 })
