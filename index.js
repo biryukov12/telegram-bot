@@ -396,11 +396,10 @@ bot.on('message', msg => {
 // d
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
-    const file_id = 'BQADAgADvAQAAkzPAUloyjxS2t7oaBYE'
-    const url = 'https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx'
+    // const url = `https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx`
+    const url2 = 'https://media.giphy.com/media/hWob8gZY6p5Dqq8Ss6/source.gif'
     if(msg.text.toLowerCase() === 'd') {
-        bot.sendDocument(chatID, file_id)
-        bot.sendDocument(chatID, url)
+        bot.sendDocument(chatID, url2)
         bot.sendMessage(chatID, 'bull shit')
     }
 })
