@@ -396,10 +396,9 @@ bot.on('message', msg => {
 // d
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
-    // const url = `https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx`
-    const url2 = 'https://miro.medium.com/max/1200/1*wriD_FbpF5X4ko4gxelulA.png'
+    const url = './1.xlsx'
     if(msg.text.toLowerCase() === 'd') {
-        bot.sendDocument(chatID, url2)
+        bot.sendDocument(chatID, url)
         bot.sendMessage(chatID, 'bull shit')
     }
 })
