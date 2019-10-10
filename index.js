@@ -397,7 +397,7 @@ bot.on('message', msg => {
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
     // const url = `https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx`
-    const url2 = 'https://media.giphy.com/media/hWob8gZY6p5Dqq8Ss6/source.gif'
+    const url2 = 'https://miro.medium.com/max/1200/1*wriD_FbpF5X4ko4gxelulA.png'
     if(msg.text.toLowerCase() === 'd') {
         bot.sendDocument(chatID, url2)
         bot.sendMessage(chatID, 'bull shit')
