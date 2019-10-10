@@ -401,6 +401,7 @@ bot.on('message', (msg) => {
     if(msg.text.toLowerCase() === 'd') {
         bot.sendDocument(chatID, file_id)
         bot.sendDocument(chatID, url)
+        bot.sendMessage(chatID, 'bull shit')
     }
 })
 
