@@ -400,7 +400,7 @@ bot.on('message', (msg) => {
     const url = 'https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx'
     if(msg.text.toLowerCase() === 'd') {
         bot.sendDocument(chatID, file_id)
-        bot.sendDocument(chatID, ur)
+        bot.sendDocument(chatID, url)
     }
 })
 
