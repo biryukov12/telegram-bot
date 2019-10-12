@@ -15,7 +15,11 @@
     "blockchain.info": "2.12.1",
     "cryptoapis.io": "4.0.0",
     "node-telegram-bot-api": "0.30.0",
-    "request": "2.88.0"
+    "node-xlsx": "^0.15.0",
+    "request": "^2.88.0",
+    "require": "^2.4.20",
+    "xlsx": "^0.15.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.3"
