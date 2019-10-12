@@ -1,7 +1,6 @@
 process.env["NTBA_FIX_319"] = 1
 const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
-const CryptoApis = require('cryptoapis.io')
 const apiKey = '51b9fdc39b679d0d7031fc87c686c3c0e75246ee'
 const TOKEN = '471621092:AAEZqXY7nBPgagsCwLQlnlIjM9ZXomQhr2k'
 const caClient = new CryptoApis(apiKey)
@@ -58,11 +57,6 @@ bot.onText(/\/value/, (msg) => {
                     {
                         text:'€',
                         callback_data:'eur'
-                    },
-
-                    {
-                        text:'₿',
-                        callback_data:'btc'
                     }
                 ]
             ]
@@ -285,11 +279,6 @@ bot.on('callback_query', query => {
                         {
                             text:'€',
                             callback_data:'eur'
-                        },
-
-                        {
-                            text:'₿',
-                            callback_data:'btc'
                         }
                     ]
                 ]
@@ -324,17 +313,6 @@ bot.on('callback_query', query => {
                     })
                 }
             })
-        break
-
-        case ('btc'):
-            caClient.CMD.exchangeRates.getSpecificRate(baseBTC, baseUSD).then(function(result) {
-                bot.sendMessage(query.message.chat.id, `<b>1 ₿</b> = <b>` + (result.payload.medianPrice).toFixed(2) + ` $</b>`, {
-                    parse_mode: 'HTML'
-                })
-            })
-                .catch(function(err) {
-                    console.error(err)
-                })
         break
     }
     bot.answerCallbackQuery(query.id)
@@ -410,7 +388,6 @@ bot.on('message', (msg) => {
     }
 })
 
-
 // v
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
@@ -427,11 +404,6 @@ bot.on('message', (msg) => {
                         {
                             text:'€',
                             callback_data:'eur'
-                        },
-
-                        {
-                            text:'₿',
-                            callback_data:'btc'
                         }
                     ]
                 ]
