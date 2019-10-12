@@ -6,7 +6,7 @@ const baseRUB = 'RUB'
 const baseUSD = 'USD'
 
 const aws = require('aws-sdk')
-const TOKEN = new aws.S3({accessKeyId: process.env.TOKEN})
+let s3 = new aws.S3({TOKEN: process.env.tg_token})
 
 const bot = new TelegramBot(TOKEN, {
     polling: {
