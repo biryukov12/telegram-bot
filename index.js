@@ -3,7 +3,7 @@ const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
 const aws = require('aws-sdk')
 let TOKEN = new aws.S3({
-    accessKeyId: process.env.TOKEN,
+    accessKeyId: process.env.token,
 });
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
