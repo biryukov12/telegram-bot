@@ -1,4 +1,5 @@
 .idea
 node_modules
+config
 package-lock.json
 1.xlsx
