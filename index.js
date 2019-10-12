@@ -1,7 +1,10 @@
 process.env["NTBA_FIX_319"] = 1
 const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
-const TOKEN = ''
+const aws = require('aws-sdk')
+let TOKEN = new aws.S3({
+    accessKeyId: process.env.TOKEN,
+});
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const bot = new TelegramBot(TOKEN, {
