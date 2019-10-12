@@ -1,13 +1,12 @@
 process.env["NTBA_FIX_319"] = 1
 const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
-//const TOKEN = '471621092:AAEZqXY7nBPgagsCwLQlnlIjM9ZXomQhr2k'
-const baseRUB = 'RUB'
-const baseUSD = 'USD'
 
 const aws = require('aws-sdk')
-let s3 = new aws.S3({TOKEN: process.env.tg_token})
+new aws.S3({TOKEN: process.env.tg_token})
 
+const baseRUB = 'RUB'
+const baseUSD = 'USD'
 const bot = new TelegramBot(TOKEN, {
     polling: {
         interval: 300,
