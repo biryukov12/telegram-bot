@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.548.0",
     "blockchain.info": "2.12.1",
     "cryptoapis.io": "4.0.0",
     "heroku-client": "^3.0.7",
