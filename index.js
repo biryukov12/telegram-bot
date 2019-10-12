@@ -1,6 +1,7 @@
 process.env["NTBA_FIX_319"] = 1
 const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
+const TOKEN = ''
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const bot = new TelegramBot(TOKEN, {
