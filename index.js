@@ -1,12 +1,8 @@
 process.env["NTBA_FIX_319"] = 1
 const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
-const apiKey = '51b9fdc39b679d0d7031fc87c686c3c0e75246ee'
-const TOKEN = '471621092:AAEZqXY7nBPgagsCwLQlnlIjM9ZXomQhr2k'
-const caClient = new CryptoApis(apiKey)
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
-const baseBTC = 'BTC'
 const bot = new TelegramBot(TOKEN, {
     polling: {
         interval: 300,
