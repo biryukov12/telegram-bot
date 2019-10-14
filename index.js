@@ -369,12 +369,12 @@ bot.on('message', (msg) => {
     const url = 'https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx'
     const file = request(url)
     const fileOptions = {
-        filename: 'Расписание ИТ.xlsx',
+        filename: 'Mag IT 19-20.xlsx',
         contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     }
     if(msg.text.toLowerCase() === 'd') {
-        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+'ИТ Магистратура 2019-2020'}, fileOptions)
-        bot.sendMessage(chatID, 'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя')
+        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+'ИТ Магистратура 2019-2020 \n'+
+                'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя'}, fileOptions)
     }
 })
 // v
