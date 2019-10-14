@@ -1,6 +1,6 @@
-process.env["NTBA_FIX_319"] = 1
 const TelegramBot = require('node-telegram-bot-api')
 const request = require('request')
+const moment = require('moment')
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const bot = new TelegramBot(process.env.TOKEN, {
@@ -18,8 +18,8 @@ const bot = new TelegramBot(process.env.TOKEN, {
 // /Start dialog
 bot.onText(/\/start/, (msg) => {
     const chatID = msg.chat.id
-    bot.sendSticker(msg.chat.id, msg.file_id ='CAADAgADoD0AAlOx9wNrJbrMA400lQI')
-    bot.sendMessage(msg.chat.id, 'Чем могу помочь?', {
+    bot.sendSticker(chatID, msg.file_id ='CAADAgADoD0AAlOx9wNrJbrMA400lQI')
+    bot.sendMessage(chatID, 'Чем могу помочь?', {
         reply_markup: {
             inline_keyboard: [
                 [
@@ -31,8 +31,6 @@ bot.onText(/\/start/, (msg) => {
                         text: 'Прогноз погоды',
                         callback_data: 'weather'
                     }]
-
-
             ]
         }
     })
@@ -101,7 +99,6 @@ bot.onText(/\/help/, (msg) => {
 
 
 // Inline keyboard
-
 // Inline weather
 // Choose city
 bot.on('callback_query', query => {
@@ -366,7 +363,6 @@ bot.on('message', msg => {
         })
     }
 })
-
 // d
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
@@ -377,13 +373,10 @@ bot.on('message', (msg) => {
         contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     }
     if(msg.text.toLowerCase() === 'd') {
-
-        bot.sendDocument(chatID, file, {caption: '' +
-                'Расписание занятий \n' +
-                'ИТ Магистратура 2019-2020'}, fileOptions)
+        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+'ИТ Магистратура 2019-2020'}, fileOptions)
+        bot.sendMessage(chatID, 'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя')
     }
 })
-
 // v
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
@@ -411,17 +404,17 @@ bot.on('message', (msg) => {
 // Other
 // "Спасибо"
 bot.on('message', (msg) => {
-    const { id } = msg.chat
+    const chatID = msg.chat.id
     if(msg.text.toLowerCase() === 'спасибо' || msg.text.toLowerCase() === 'благодарю'){
-        bot.sendSticker(msg.chat.id, 'CAADAgADsQUAAmMr4glZ9U6i3_vkggI')
+        bot.sendSticker(chatID, 'CAADAgADsQUAAmMr4glZ9U6i3_vkggI')
     }
 })
 //"Привет"
 bot.on('message', (msg) => {
-    const { id } = msg.chat
+    const chatID = msg.chat.id
     if(msg.text.toLowerCase() === 'привет'){
-        bot.sendSticker(msg.chat.id, msg.file_id ='CAADAgADoD0AAlOx9wNrJbrMA400lQI')
-        bot.sendMessage(msg.chat.id, 'Чем могу помочь?', {
+        bot.sendSticker(chatID, msg.file_id ='CAADAgADoD0AAlOx9wNrJbrMA400lQI')
+        bot.sendMessage(chatID, 'Чем могу помочь?', {
             reply_markup: {
                 inline_keyboard: [
                     [
