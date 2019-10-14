@@ -312,7 +312,7 @@ bot.on('callback_query', query => {
 })
 
 // Menu by letter
-// m
+// m – main menu
 bot.on('message', msg =>{
     const chatID = msg.chat.id
     if (msg.text.toLowerCase() === 'm') {
@@ -333,7 +333,7 @@ bot.on('message', msg =>{
         })
     }
 })
-// w
+// w – weather
 bot.on('message', msg => {
     const chatID = msg.chat.id
     if (msg.text.toLowerCase() === 'w') {
@@ -363,21 +363,7 @@ bot.on('message', msg => {
         })
     }
 })
-// d
-bot.on('message', (msg) => {
-    const chatID = msg.chat.id
-    const url = 'https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx'
-    const file = request(url)
-    const fileOptions = {
-        filename: 'Маг. 1 курс ИТ 2019-2020.xlsx',
-        contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    }
-    if(msg.text.toLowerCase() === 'd') {
-        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
-                'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя'}, fileOptions)
-    }
-})
-// v
+// v – value
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
     if(msg.text.toLowerCase() === 'v') {
@@ -398,6 +384,27 @@ bot.on('message', (msg) => {
                 ]
             }
         })}
+})
+// s – schedule
+bot.on('message', (msg) => {
+    const chatID = msg.chat.id
+    const url = 'https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx'
+    const file = request(url)
+    const fileOptions = {
+        filename: 'Маг. 1 курс ИТ 2019-2020.xlsx',
+        contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    }
+    if(msg.text.toLowerCase() === 's') {
+        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
+                'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя'}, fileOptions)
+    }
+})
+// n – number of week
+bot.on('message', (msg) => {
+    const chatID = msg.chat.id
+    if (msg.text.toLowerCase() === 'n') {
+        bot.sendMessage(chatID, 'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя')
+    }
 })
 
 
