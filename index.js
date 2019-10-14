@@ -373,7 +373,7 @@ bot.on('message', (msg) => {
         contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     }
     if(msg.text.toLowerCase() === 'd') {
-        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+'ИТ Магистратура 2019-2020 \n'+
+        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий ИТ Магистратура 2019-2020 \n'+
                 'Сейчас ' + (moment().week() - moment('2019-08-31').week()) + ' неделя'}, fileOptions)
     }
 })
