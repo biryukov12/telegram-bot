@@ -369,7 +369,7 @@ bot.on('message', (msg) => {
     const url = 'https://www.mirea.ru/upload/medialibrary/ad3/IIT_mag_1k_19_20_osen.xlsx'
     const file = request(url)
     const fileOptions = {
-        filename: 'Магистратура 1 курс ИТ 2019-2020.xlsx',
+        filename: 'Маг. 1 курс ИТ 2019-2020.xlsx',
         contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     }
     if(msg.text.toLowerCase() === 'd') {
