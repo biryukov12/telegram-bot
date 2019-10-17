@@ -218,7 +218,7 @@ bot.on('callback_query', query => {
         if (flag1) {
             bot.sendMessage(chatID, 'Введите название города.\n' +
                 'Если прогноз погоды не отобразится – введите название города на латинице.')
-            flag1 === true
+            flag1 == true
         }
         else {
             bot.on('message', msg => {
