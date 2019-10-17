@@ -213,50 +213,46 @@ bot.on('callback_query', query => {
 // Enter city
 bot.on('callback_query', query => {
     const chatID = query.message.chat.id
-    var flag1 = false
+    //var flag1 = false
     if (`${query.data}` === ('other')) {
-        if (flag1) {
-            bot.sendMessage(chatID, 'Введите название города.\n' +
-                'Если прогноз погоды не отобразится – введите название города на латинице.')
-            flag1 == true
-        }
-        else {
-            bot.on('message', msg => {
-                // Translation from сyrillic
-                let transliterate = (
-                    function () {
-                        let
-                            rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
-                            eng = "shh sh ch ts yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x ".split(/ +/g)
+        if (flag)
+        bot.sendMessage(chatID, 'Введите название города.\nЕсли прогноз погоды не отобразится – введите название города на латинице.')
+        //flag1 == true
+        bot.on('message', msg =>{
+            // Translation from сyrillic
+            let transliterate = (
+                function () {
+                    let
+                        rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
+                        eng = "shh sh ch ts yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x ".split(/ +/g)
 
-                        return function (text, engToRus) {
-                            let x
-                            for (x = 0; x < rus.length; x++) {
-                                text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x])
-                                text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase())
-                            }
-                            return text
+                    return function (text, engToRus) {
+                        let x
+                        for (x = 0; x < rus.length; x++) {
+                            text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x])
+                            text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase())
                         }
+                        return text
                     }
-                )()
-                // Weather for entered city
-                const city = transliterate(msg.text)
-                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=307bf290d83b2692ad950c49cd70a70e`
-                request(url, function (error, response, body) {
-                    if (!error && response.statusCode === 200) {
-                        const bodyJson = JSON.parse(body)
-                        let weather_type = weatherType(`${bodyJson.weather[0].main}`)
-                        const weather_temp = `${msg.text}:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
-                        const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
-                        const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
-                        bot.sendMessage(chatID, weather_temp + '\n' + weather_wind + '\n' + weather_humidity, {
-                            parse_mode: 'HTML'
-                        })
-                    }
-                })
+                }
+            )()
+            // Weather for entered city
+            const city = transliterate(msg.text)
+            const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=307bf290d83b2692ad950c49cd70a70e`
+            request(url, function(error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    const bodyJson = JSON.parse(body)
+                    let weather_type = weatherType(`${bodyJson.weather[0].main}`)
+                    const weather_temp = `${msg.text}:<b> ${bodyJson.main.temp} °C, </b>` + `<b>${weather_type}</b>`
+                    const weather_wind = `ветер:<b> ${bodyJson.wind.speed} м/с</b>`
+                    const weather_humidity = `влажность:<b> ${bodyJson.main.humidity} %</b>`
+                    bot.sendMessage(chatID, weather_temp + '\n' + weather_wind + '\n' + weather_humidity, {
+                        parse_mode: 'HTML'
+                    })
+                }
             })
-            flag1 == false
-        }
+        })
+        //flag1 == false
     }
     bot.answerCallbackQuery(query.id)
 })
