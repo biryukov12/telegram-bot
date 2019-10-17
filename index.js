@@ -213,11 +213,9 @@ bot.on('callback_query', query => {
 // Enter city
 bot.on('callback_query', query => {
     const chatID = query.message.chat.id
-    //var flag1 = false
     if (`${query.data}` === ('other')) {
         bot.sendMessage(chatID, 'Введите название города.\n' +
             'Если прогноз погоды не отобразится – введите название города на латинице.')
-        //flag1 == true
         bot.on('message', msg =>{
             // Translation from сyrillic
             let transliterate = (
@@ -252,7 +250,6 @@ bot.on('callback_query', query => {
                 }
             })
         })
-        //flag1 == false
     }
     bot.answerCallbackQuery(query.id)
 })
