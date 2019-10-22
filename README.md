@@ -4,7 +4,7 @@ Is my first telegram bot on a JS (Node.js runtime)
 ### From the available functionality:
 - exchange rates (USD-RUB, EUR-RUB, Bitcoin-USD);
 - weather forecast (quick access to the weather forecast in Safonovo, Moscow and St. Petersburg, and in any other city by name).
-- a simple parser for the MIREA schedule (necessary to send the "s" to the bot).
+- a simple parser of study schedule (necessary to send the "s" to the bot).
 - the number of the school week (necessary to send "n" to the bot).
 ---
 
