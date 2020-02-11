@@ -394,14 +394,14 @@ bot.on('message', (msg) => {
     }
     if(msg.text.toLowerCase() === 's') {
         bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
-                'Сейчас ' + (moment().week() - moment('2020-02-10').week()) + ' неделя'}, fileOptions)
+                'Сейчас ' + (moment().week() - moment('2020-02-10').week() + 1) + ' неделя'}, fileOptions)
     }
 })
 // n – number of week
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
     if (msg.text.toLowerCase() === 'n') {
-        bot.sendMessage(chatID, 'Сейчас ' + (moment().week() - moment('2020-02-10').week()) + ' неделя')
+        bot.sendMessage(chatID, 'Сейчас ' + (moment().week() - moment('2020-02-10').week() + 1) + ' неделя')
     }
 })
 
