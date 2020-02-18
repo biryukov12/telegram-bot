@@ -1,5 +1,5 @@
 # @Diary_biryukov12_bot
-Is my first telegram bot on a JS (Node.js runtime)
+Is my first telegram bot on a JS (Node.js)
 
 ### From the available functionality:
 - exchange rates (USD-RUB, EUR-RUB, Bitcoin-USD);
