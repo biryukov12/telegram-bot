@@ -386,7 +386,7 @@ bot.on('message', (msg) => {
 // s – schedule
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
-    const url = 'https://www.mirea.ru/upload/medialibrary/e37/IIT_mag_1k_19_20_vesna.xlsx'
+    const url = 'https://www.mirea.ru/upload/medialibrary/b3c/IIT_mag_1k_19_20_vesna-_1_.xlsx'
     const file = request(url)
     const fileOptions = {
         filename: 'Маг. 1 курс ИТ весна.xlsx',
