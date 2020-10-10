@@ -3,6 +3,7 @@ const request = require('request')
 const moment = require('moment')
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
+const puppeteer = require('puppeteer')
 const bot = new TelegramBot(process.env.TOKEN, {
     polling: {
         interval: 300,
@@ -12,6 +13,21 @@ const bot = new TelegramBot(process.env.TOKEN, {
         }
     }
 })
+
+async function schedule_url() {
+
+    const browser = await puppeteer.launch({})
+    const page = await browser.newPage()
+    await page.setViewport({ width: 600, height: 800 })
+    await page.goto('https://www.mirea.ru/schedule')
+    const url_for_download = await page.evaluate((sel) => {
+        return document.querySelector(sel).getAttribute('href')
+    }, '#toggle-hl_2_2-hl_3_3 > div:nth-child(6) > a')
+    await browser.close()
+    console.log(url_for_download)
+
+    return url_for_download
+}
 
 
 // /Menu
@@ -386,7 +402,7 @@ bot.on('message', (msg) => {
 // s – schedule
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
-    const url = 'https://www.mirea.ru/upload/medialibrary/b3c/IIT_mag_1k_19_20_vesna-_1_.xlsx'
+    const url = schedule_url()
     const file = request(url)
     const fileOptions = {
         filename: 'Маг. 1 курс ИТ весна.xlsx',
