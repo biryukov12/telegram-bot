@@ -1,10 +1,9 @@
 const TelegramBot = require('node-telegram-bot-api')
-const request = require('request')
 const moment = require('moment')
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const puppeteer = require('puppeteer')
-const bot = new TelegramBot(process.env.TOKEN, {
+const bot = new TelegramBot('471621092:AAEZqXY7nBPgagsCwLQlnlIjM9ZXomQhr2k', {
     polling: {
         interval: 300,
         autoStart: true,
