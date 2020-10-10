@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "env-cmd ./config/token.env nodemon src/index.js"
+    "dev": "env-cmd ./config/token.env nodemon src/index.js",
+    "test": "nodemon test.js"
   },
   "engines": {
     "node": "12.11.0"
@@ -18,10 +19,11 @@
     "cryptoapis.io": "4.0.0",
     "heroku-client": "^3.0.7",
     "moment": "^2.24.0",
+    "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "0.30.0",
     "node-xlsx": "^0.15.0",
     "puppeteer": "^5.3.1",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "require": "^2.4.20",
     "xlsx": "^0.15.1",
     "xmlhttprequest": "^1.8.0"

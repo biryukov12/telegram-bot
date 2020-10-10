@@ -398,20 +398,25 @@ bot.on('message', (msg) => {
             }
         })}
 })
+
 // s – schedule
 bot.on('message', (msg) => {
-    const chatID = msg.chat.id
-    const url = schedule_url()
-    const file = request(url)
-    const fileOptions = {
-        filename: 'Маг. 1 курс ИТ весна.xlsx',
-        contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    }
     if(msg.text.toLowerCase() === 's') {
-        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
-                'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
+        const chatID = msg.chat.id
+        schedule_url().then(r => {
+            const file = request(encodeURI(r))
+            const fileOptions = {
+                filename: 'Маг. 1 курс ИТ весна.xlsx',
+                contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            }
+
+            bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
+                    'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
+
+        })
     }
 })
+
 // n – number of week
 bot.on('message', (msg) => {
     const chatID = msg.chat.id
