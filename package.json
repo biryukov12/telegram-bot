@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "env-cmd ./config/token.env nodemon src/index.js",
     "test": "nodemon test.js"
   },
   "engines": {
