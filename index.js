@@ -409,7 +409,7 @@ bot.on('message', (msg) => {
             const file = request(encodeURI(r))
             const fileOptions = {
                 filename: 'Маг. 1 курс ИТ весна.xlsx',
-                contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                contentType: 'application/octet-stream'
             }
 
             bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
