@@ -4,7 +4,7 @@ const request = require('request')
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const puppeteer = require('puppeteer')
-const bot = new TelegramBot(process.env.tgBotToken, {
+const bot = new TelegramBot(process.env.TOKEN, {
     polling: {
         interval: 300,
         autoStart: true,
