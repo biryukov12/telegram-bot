@@ -1,9 +1,11 @@
 const TelegramBot = require('node-telegram-bot-api')
 const moment = require('moment')
 const request = require('request')
+const fetch = require("node-fetch");
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const puppeteer = require('puppeteer')
+
 const bot = new TelegramBot(process.env.TOKEN, {
     polling: {
         interval: 300,
@@ -13,6 +15,16 @@ const bot = new TelegramBot(process.env.TOKEN, {
         }
     }
 })
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var monthNames = new Array("Jan", "Feb", "Mar",
+    "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+    "Oct", "Nov", "Dec");
+var mm = monthNames[today.getMonth()];
+var yyyy = today.getFullYear();
+
+today = dd + ' ' + mm + ' ' + yyyy;
 
 async function schedule_url() {
 
@@ -400,22 +412,63 @@ bot.on('message', (msg) => {
         })}
 })
 
-// s – schedule
+// s – check date and download schedule
 bot.on('message', (msg) => {
     if(msg.text.toLowerCase() === 's') {
         const chatID = msg.chat.id
+        bot.sendMessage(chatID, 'Уже проверяю...')
+        schedule_url()
+            .then(r => {
+                fetch(encodeURI(r))
+                    .then(response => {
+                        var last_modified = response.headers.get('last-modified').substr(5, 11)
+                        var last_modified_full = response.headers.get('last-modified')
+                        if (last_modified !== today) {
+                            bot.sendMessage(chatID,'Расписание не изменилось, последнее обновление: ' +
+                                '\n' + last_modified_full + '\n' + 'Сегодня: ' + today)
+
+                            console.log('Расписание не изменилось, последнее обновление: ' + last_modified_full)
+                            console.log('Сегодня: ' + today)
+                        }
+                        else {
+                            bot.sendMessage(chatID,'Расписание изменилось, время обновления ' +
+                                '\n' + last_modified_full + '\n' + 'Сегодня: ' + today)
+                            bot.sendMessage(chatID,'Расписание: ')
+
+                            console.log('Расписание изменилось, время обновления ' + last_modified_full)
+                            console.log('Сегодня: ' + today)
+                            schedule_url()
+                                .then(r => {
+                                    const file = request(encodeURI(r))
+                                    const fileOptions = {
+                                        filename: 'Маг. 2 курс ИТ.xlsx',
+                                        contentType: 'application/octet-stream'
+                                    }
+                                    bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
+                                            'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
+                                })
+                        }
+                    })
+
+            })
+    }
+})
+
+// d — download schedule
+bot.on('message', (msg) => {
+    if(msg.text.toLowerCase() === 'd') {
+        const chatID = msg.chat.id
         bot.sendMessage(chatID, 'Уже скачиваю...')
-        schedule_url().then(r => {
-            const file = request(encodeURI(r))
-            const fileOptions = {
-                filename: 'Маг. 1 курс ИТ весна.xlsx',
-                contentType: 'application/octet-stream'
-            }
-
-            bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
-                    'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
-
-        })
+        schedule_url()
+            .then(r => {
+                const file = request(encodeURI(r))
+                const fileOptions = {
+                    filename: 'Маг. 2 курс ИТ.xlsx',
+                    contentType: 'application/octet-stream'
+                }
+                bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
+                        'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
+            })
     }
 })
 
