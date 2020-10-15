@@ -18,12 +18,12 @@ const bot = new TelegramBot(process.env.TOKEN, {
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
-var monthNames = new Array("Jan", "Feb", "Mar",
+var monthNames = ["Jan", "Feb", "Mar",
     "Apr", "May", "Jun", "Jul", "Aug", "Sep",
-    "Oct", "Nov", "Dec");
+    "Oct", "Nov", "Dec"];
 var mm = monthNames[today.getMonth()];
 var yyyy = today.getFullYear();
-
+console.log(new Date().getDate())
 today = dd + ' ' + mm + ' ' + yyyy;
 
 async function schedule_url() {
@@ -306,6 +306,7 @@ bot.on('callback_query', query => {
     }
     bot.answerCallbackQuery(query.id)
 })
+
 bot.on('callback_query', query => {
     switch (`${query.data}`) {
         case ('usd'):
@@ -337,9 +338,84 @@ bot.on('callback_query', query => {
     bot.answerCallbackQuery(query.id)
 })
 
+// i
+bot.on('message', msg => {
+    const chatID = msg.chat.id
+    if (msg.text.toLowerCase() === 'i') {
+        bot.sendMessage(chatID, 'Проверка каждые 24 часа')
+        var second_intarval = setInterval(() => {
+            schedule_url()
+                .then(r => {
+                    fetch(encodeURI(r))
+                        .then(response => {
+                            var last_modified = response.headers.get('last-modified').substr(5, 11)
+                            var last_modified_full = response.headers.get('last-modified')
+                            if (last_modified !== today) {
+                                bot.sendMessage(chatID,'Расписание не изменилось, последнее обновление: ' +
+                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + today, {
+                                    reply_markup: {
+                                        inline_keyboard: [
+                                            [
+                                                {
+                                                    text: 'Отменить планирование',
+                                                    callback_data: 'clearInterval'
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                })
+                            }
+                            else {
+                                bot.sendMessage(chatID,'Расписание изменилось, время обновления ' +
+                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + today)
+                                bot.sendMessage(chatID,'Расписание: ')
+                                schedule_url()
+                                    .then(r => {
+                                        const file = request(encodeURI(r))
+                                        const fileOptions = {
+                                            filename: 'Маг. 2 курс ИТ.xlsx',
+                                            contentType: 'application/octet-stream'
+                                        }
+                                        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
+                                                'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
+                                            .then(() => {
+                                                bot.sendMessage(chatID,'Отменить планирование?', {
+                                                    reply_markup: {
+                                                        inline_keyboard: [
+                                                            [
+                                                                {
+                                                                    text: 'Отменить планирование',
+                                                                    callback_data: 'clearInterval'
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                })
+                                            })
+                                    })
+                            }
+                        })
+
+                })
+        }, 86400000)
+
+    }
+
+    bot.on('callback_query', query => {
+        const chatID = query.message.chat.id
+        if (`${query.data}` === 'clearInterval') {
+            bot.sendMessage(chatID, 'Планирование отменено.')
+            clearInterval(second_intarval)
+        }
+        bot.answerCallbackQuery(query.id)
+    })
+
+})
+
+
 // Menu by letter
 // m – main menu
-bot.on('message', msg =>{
+bot.on('message', msg => {
     const chatID = msg.chat.id
     if (msg.text.toLowerCase() === 'm') {
         bot.sendMessage(chatID, 'Чем могу помочь?', {
