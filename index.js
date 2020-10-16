@@ -1,10 +1,11 @@
 const TelegramBot = require('node-telegram-bot-api')
 const moment = require('moment')
 const request = require('request')
-const fetch = require("node-fetch");
+const fetch = require("node-fetch")
 const baseRUB = 'RUB'
 const baseUSD = 'USD'
 const puppeteer = require('puppeteer')
+const ontime = require('ontime')
 
 const bot = new TelegramBot(process.env.TOKEN, {
     polling: {
@@ -31,7 +32,6 @@ function get_date() {
 }
 
 async function schedule_url() {
-
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']})
     const page = await browser.newPage()
     await page.setViewport({ width: 600, height: 800 })
@@ -346,62 +346,49 @@ bot.on('callback_query', query => {
 bot.on('message', msg => {
     const chatID = msg.chat.id
     if (msg.text.toLowerCase() === 'i') {
-        bot.sendMessage(chatID, 'Проверка каждые 24 часа')
-        var second_intarval = setInterval(() => {
-            schedule_url()
-                .then(r => {
-                    fetch(encodeURI(r))
-                        .then(response => {
-                            var last_modified = response.headers.get('last-modified').substr(5, 11)
-                            var last_modified_full = response.headers.get('last-modified')
-                            if (last_modified !== get_date()) {
-                                bot.sendMessage(chatID,'Расписание не изменилось, последнее обновление: ' +
-                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date(), {
-                                    reply_markup: {
-                                        inline_keyboard: [
-                                            [
-                                                {
-                                                    text: 'Отменить планирование',
-                                                    callback_data: 'clearInterval'
-                                                }
-                                            ]
-                                        ]
-                                    }
-                                })
-                            }
-                            else {
-                                bot.sendMessage(chatID,'Расписание изменилось, время обновления ' +
-                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date())
-                                bot.sendMessage(chatID,'Расписание: ')
-                                schedule_url()
-                                    .then(r => {
-                                        const file = request(encodeURI(r))
-                                        const fileOptions = {
-                                            filename: 'Маг. 2 курс ИТ.xlsx',
-                                            contentType: 'application/octet-stream'
-                                        }
-                                        bot.sendDocument(chatID, file, {caption: ''+'Расписание занятий \n'+ '\n' +
-                                                'Сейчас ' + (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'}, fileOptions)
-                                            .then(() => {
-                                                bot.sendMessage(chatID,'Отменить планирование?', {
-                                                    reply_markup: {
-                                                        inline_keyboard: [
-                                                            [
-                                                                {
-                                                                    text: 'Отменить планирование',
-                                                                    callback_data: 'clearInterval'
-                                                                }
-                                                            ]
-                                                        ]
-                                                    }
+        bot.sendMessage(chatID, 'Проверка каждый день в 10 утра')
+        ontime(
+            {
+                cycle: ['10:00:00']
+            }, function (ot) {
+                schedule_url()
+                    .then(r => {
+                        fetch(encodeURI(r))
+                            .then(response => {
+                                var last_modified = response.headers.get('last-modified').substr(5, 11)
+                                var last_modified_full = response.headers.get('last-modified')
+                                if (last_modified !== get_date()) {
+                                    bot.sendMessage(chatID,'Расписание не изменилось, последнее обновление: ' +
+                                        '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date())
+                                        .then(() => {
+                                            ot.done()
+                                        })
+                                }
+                                else {
+                                    bot.sendMessage(chatID,'Расписание изменилось, время обновления ' +
+                                        '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date())
+                                    bot.sendMessage(chatID,'Расписание: ')
+                                    schedule_url()
+                                        .then(r => {
+                                            const file = request(encodeURI(r))
+                                            const fileOptions = {
+                                                filename: 'Маг. 2 курс ИТ.xlsx',
+                                                contentType: 'application/octet-stream'
+                                            }
+                                            bot.sendDocument(chatID, file,
+                                                {caption: ''+'Расписание занятий \n'+ '\n' + 'Сейчас ' +
+                                                        (moment().week() - moment('2020-09-01').week() + 1) + ' неделя'},
+                                                fileOptions)
+                                                .then(() => {
+                                                    ot.done()
                                                 })
-                                            })
-                                    })
-                            }
-                        })
+                                        })
+                                }
+                            })
 
-                })
-        }, 86400000)
+                    })
+            }
+        )
 
     }
 
