@@ -16,15 +16,19 @@ const bot = new TelegramBot(process.env.TOKEN, {
     }
 })
 
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var monthNames = ["Jan", "Feb", "Mar",
-    "Apr", "May", "Jun", "Jul", "Aug", "Sep",
-    "Oct", "Nov", "Dec"];
-var mm = monthNames[today.getMonth()];
-var yyyy = today.getFullYear();
-console.log(new Date().getDate())
-today = dd + ' ' + mm + ' ' + yyyy;
+function get_date() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var monthNames = ["Jan", "Feb", "Mar",
+        "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+        "Oct", "Nov", "Dec"];
+    var mm = monthNames[today.getMonth()];
+    var yyyy = today.getFullYear();
+    console.log(new Date().getDate())
+    today = dd + ' ' + mm + ' ' + yyyy;
+
+    return today
+}
 
 async function schedule_url() {
 
@@ -350,9 +354,9 @@ bot.on('message', msg => {
                         .then(response => {
                             var last_modified = response.headers.get('last-modified').substr(5, 11)
                             var last_modified_full = response.headers.get('last-modified')
-                            if (last_modified !== today) {
+                            if (last_modified !== get_date()) {
                                 bot.sendMessage(chatID,'Расписание не изменилось, последнее обновление: ' +
-                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + today, {
+                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date(), {
                                     reply_markup: {
                                         inline_keyboard: [
                                             [
@@ -367,7 +371,7 @@ bot.on('message', msg => {
                             }
                             else {
                                 bot.sendMessage(chatID,'Расписание изменилось, время обновления ' +
-                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + today)
+                                    '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date())
                                 bot.sendMessage(chatID,'Расписание: ')
                                 schedule_url()
                                     .then(r => {
@@ -499,20 +503,20 @@ bot.on('message', (msg) => {
                     .then(response => {
                         var last_modified = response.headers.get('last-modified').substr(5, 11)
                         var last_modified_full = response.headers.get('last-modified')
-                        if (last_modified !== today) {
+                        if (last_modified !== get_date()) {
                             bot.sendMessage(chatID,'Расписание не изменилось, последнее обновление: ' +
-                                '\n' + last_modified_full + '\n' + 'Сегодня: ' + today)
+                                '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date())
 
                             console.log('Расписание не изменилось, последнее обновление: ' + last_modified_full)
-                            console.log('Сегодня: ' + today)
+                            console.log('Сегодня: ' + get_date())
                         }
                         else {
                             bot.sendMessage(chatID,'Расписание изменилось, время обновления ' +
-                                '\n' + last_modified_full + '\n' + 'Сегодня: ' + today)
+                                '\n' + last_modified_full + '\n' + 'Сегодня: ' + get_date())
                             bot.sendMessage(chatID,'Расписание: ')
 
                             console.log('Расписание изменилось, время обновления ' + last_modified_full)
-                            console.log('Сегодня: ' + today)
+                            console.log('Сегодня: ' + get_date())
                             schedule_url()
                                 .then(r => {
                                     const file = request(encodeURI(r))
